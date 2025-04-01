@@ -1,0 +1,36 @@
+2) Write a script to create “cricket.xml” file with multiple elements as given 
+below <Cricket team> <Country = India> 
+<Player Name >-------- <Player Name > 
+ <Wickets>--------- </Wickets> <Runs>------ --</Runs> 
+</Country> 
+</Cricket team> 
+Also add country = “England” and its element
+:-------------------------- 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<cricket_team>
+    <Country name="India">
+        <Player>
+            <Name>Rohit Sharma</Name>
+            <Wickets>0</Wickets>
+            <Runs>9000</Runs>
+        </Player>
+        <Player>
+            <Name>Virat Kohli</Name>
+            <Wickets>0</Wickets>
+            <Runs>12000</Runs>
+        </Player>
+    </Country>
+    <Country name="England">
+        <Player>
+            <Name>Joe Root</Name>
+            <Wickets>0</Wickets>
+            <Runs>8000</Runs>
+        </Player>
+        <Player>
+            <Name>Ben Stokes</Name>
+            <Wickets>250</Wickets>
+            <Runs>6000</Runs>
+        </Player>
+    </Country>
+</cricket_team>

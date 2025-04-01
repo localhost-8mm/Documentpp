@@ -1,1 +1,55 @@
 
+1) Write a script to create XML file named “Course.xml” <Course> 
+ <Computer Science> 
+ <Student name>.......</Student name> 
+ <Class name>......</Class name> 
+ <percentage>.....</percentage> </Computer 
+Science> 
+</Course> 
+Store the details of 5 students who are in TYBSc. 
+:-------------------------- 
+<?xml version='1.0' encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/css" href="course.css" ?>
+<course>
+	<computer_science>
+		<student_name>om</student_name>
+		<class_name>TYBSc</class_name>
+		<percentage>45</percentage>
+	</computer_science>
+
+	<computer_science>
+		<student_name>nilesh</student_name>
+		<class_name>TYBSc</class_name>
+		<percentage>55</percentage>
+	</computer_science>
+	<computer_science>
+
+		<student_name>swaraj</student_name>
+		<class_name>TYBSc</class_name>
+		<percentage>65</percentage>
+	</computer_science>
+ 
+</course>
+
+-------
+course.css
+:-
+student_name{
+  color:blue;
+  font-family:"Bodoni MT";
+  font:italic;
+  font-size:"16";
+  }
+  class_name{
+  color:green;
+  font-family:"Arial,Helvetica,sans-serif";
+  font:normal;
+  font-size:"12";
+  }
+  percentage{
+  color:red;
+  font-family:"Impact,Charcol,sans-serif";
+  font:oblique;
+  font-size:"14";
+  }
+  

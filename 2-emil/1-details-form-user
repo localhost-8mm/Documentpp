@@ -1,1 +1,48 @@
-gjgkkk
+Write a PHP script to accept following details form a user (To, From, Subject, Text) and 
+send email to particular user. 
+ :-------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SET A1</title>
+</head>
+<body>
+	<h2>Email Details</h2>
+	<form action="seta1.php" method="post">
+		Enter Detail's For E-mail <Br>
+		From : <input type="email" name="from" required> <br> <br>
+		To : <input type="email" name="to" required> <br> <br>
+		Subject : <input type="text" name="subject" required> <br> <br>
+		Text : <textarea name="text" required></textarea>
+
+		<input type="submit" name="send" value="SEND">	<br> <br>	<hr>
+	</form>
+</body>
+ </html>
+--------
+<?php
+if (isset($_POST["send"])) {
+    // Sanitize input
+    $from = filter_var($_POST['from'], FILTER_SANITIZE_EMAIL);
+    $to = filter_var($_POST['to'], FILTER_SANITIZE_EMAIL);
+    $subject = htmlspecialchars($_POST['subject']);
+    $text = htmlspecialchars($_POST['text']);
+
+    // Validate email addresses
+    if (filter_var($to, FILTER_VALIDATE_EMAIL) && filter_var($from, FILTER_VALIDATE_EMAIL)) {
+        $headers = "From: " . $from . "\r\n" .
+                   "Reply-To: " . $from . "\r\n" .
+                   "Content-Type: text/plain; charset=UTF-8";
+
+        // Send email
+        if (mail($to, $subject, $text, $headers)) {
+            echo "<h2>Email Sent Successfully!</h2>";
+        } else {
+            echo "<h2>Email could not be sent.</h2>";
+        }
+    } else {
+        echo "<h2>Invalid Email Address</h2>";
+    }
+}
+?>
+

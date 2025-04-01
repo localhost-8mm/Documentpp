@@ -1,0 +1,74 @@
+1) Write PHP script to generate an XML code in the following format 
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+<CD Store> 
+ <Movie> 
+ <Title>Mr. India</Title> 
+ <Release Year>1987</ Release Year > 
+ </Movie> 
+ <Movie> 
+ <Title>Holiday</Title> 
+ <Release Year>2014</ Release Year > 
+ </Movie> 
+ <Movie> 
+ <Title>LOC</Title> 
+ <Release Year>2003</ Release Year > 
+ </Movie> 
+ </CD Store> 
+ :--------------------------:-------
+movie.xml
+:---
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<CD_Store>
+    <Movie>
+        <Title>Mr. India</Title>
+        <Release_Year>1987</Release_Year>
+      </Movie>
+      <Movie>
+        <Title>Holiday</Title>
+        <Release_Year>2014</Release_Year>
+      </Movie>
+      <Movie>
+        <Title>LOC</Title>
+        <Release_Year>2003</Release_Year>
+      </Movie>
+</CD_Store>
+
+------------
+movies.xml
+:-
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Movies>
+    <Classical>
+        <Movie>
+            <Name>Mughal-e-Azam</Name>
+            <ReleaseYear>1960</ReleaseYear>
+        </Movie>
+        <Movie>
+            <Name>Pather Panchali</Name>
+            <ReleaseYear>1955</ReleaseYear>
+        </Movie>
+    </Classical>
+    
+    <Action>
+        <Movie>
+            <Name>Mad Max: Fury Road</Name>
+            <ReleaseYear>2015</ReleaseYear>
+        </Movie>
+        <Movie>
+            <Name>Die Hard</Name>
+            <ReleaseYear>1988</ReleaseYear>
+        </Movie>
+    </Action>
+    
+    <Horror>
+        <Movie>
+            <Name>The Conjuring</Name>
+            <ReleaseYear>2013</ReleaseYear>
+        </Movie>
+        <Movie>
+            <Name>IT</Name>
+            <ReleaseYear>2017</ReleaseYear>
+        </Movie>
+    </Horror>
+</Movies>

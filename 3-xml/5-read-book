@@ -1,0 +1,17 @@
+1) Create an application that reads “book.xml” file into simple XML object. 
+Display attributes and elements (Hint:simple_xml_load_file() function) 
+:--------------------------
+
+<?php
+// Load the XML file
+$xml = simplexml_load_file("book.xml") or die("Error: Cannot load XML file");
+
+// Loop through each book element
+foreach ($xml->book as $book) {
+    echo "Book ID: " . $book['id'] . "<br>";
+    echo "Title: " . $book->title . "<br>";
+    echo "Author: " . $book->author . "<br>";
+    echo "Year: " . $book->year . "<br>";
+    echo "<hr>";
+}
+?>

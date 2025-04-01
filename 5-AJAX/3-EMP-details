@@ -47,6 +47,30 @@ employees name and print the selected employee’s details.
     <h3>Employee Details:</h3>
     <div id="details"></div>
 
+<!-- PHP Script -->
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    $ename = $_GET['ename'];
+
+    $employees = [
+        'nilesh' => ['eno' => 101, 'designation' => 'Manager', 'salary' => 75000],
+        'om' => ['eno' => 102, 'designation' => 'Developer', 'salary' => 60000],
+        'swaraj' => ['eno' => 103, 'designation' => 'Analyst', 'salary' => 50000]
+    ];
+
+    if (isset($employees[$ename])) {
+        $emp = $employees[$ename];
+        echo "Employee No: {$emp['eno']}<br>";
+        echo "Name: $ename<br>";
+        echo "Designation: {$emp['designation']}<br>";
+        echo "Salary: \${$emp['salary']}";
+    } else {
+        echo "No employee found.";
+    }
+}
+?>
+
+
 </body>
 </html>
 

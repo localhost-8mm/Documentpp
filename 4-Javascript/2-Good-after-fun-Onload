@@ -1,0 +1,20 @@
+2) Write a javascript to display message ‘Good Afternoon’ using function.(Hint: 
+use Event ‘Onload’). 
+:------------------- 
+
+<!DOCTYPE html>
+<html >
+<head>
+     <h1>reload the page to see message</h1>
+    
+</head>
+<body>
+  <script>
+    function displayMessage() 
+    {
+        alert('Good Afternoon');
+    }
+    window.onload = displayMessage;
+</script>
+</body>
+</html>

@@ -4,28 +4,7 @@ of characters is less than three,print’ Username is too short’. If value
 entered is appropriate the print ‘Valid username’. 
   :--------------------------
 
-  <?php
-
-if ($_SERVER['REQUEST_METHOD'] == 'GET') 
-{
-    if (isset($_GET['username'])) 
-    {
-        $username = trim($_GET['username']);
-
-        if (strlen($username) < 3) 
-        {
-            echo "Username is too short";
-        } 
-        else 
-        {
-            echo "Valid username";
-        }
-    }
-}
-?>
-
-
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>

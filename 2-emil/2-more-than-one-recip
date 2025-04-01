@@ -1,0 +1,53 @@
+Write a PHP script to design a form to sending an email to more than one recipient. 
+:-------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SET A2 - Send Email</title>
+</head>
+<body>
+    <h2>Email Details</h2>
+    <form action="seta2.php" method="post">
+        Enter Details For E-mail <br>
+        From: <input type="email" name="from" value="abc@gmail.com" required> <br><br>
+        To (comma-separated emails): <input type="text" name="to" required> <br><br>
+        Subject: <input type="text" name="subject" required> <br><br>
+        Message: <textarea name="text" required></textarea> <br><br>
+        <input type="submit" name="send" value="SEND"> <br><br>
+        <hr>
+    </form>
+</body>
+</html> 
+-----------
+<?php
+if (isset($_POST['send'])) {
+    // Get and sanitize user input
+    $from = filter_var($_POST['from'], FILTER_SANITIZE_EMAIL);
+    $to_list = $_POST['to']; // Multiple emails separated by comma
+    $to_many = explode(",", $to_list); // Convert string to array
+    $subject = htmlspecialchars($_POST['subject']);
+    $text = htmlspecialchars($_POST['text']);
+
+    // Define headers for email
+    $headers = "From: " . $from . "\r\n" .
+               "Reply-To: " . $from . "\r\n" .
+               "Content-Type: text/plain; charset=UTF-8";
+
+    foreach ($to_many as $email) {
+        $email = trim($email); // Remove extra spaces
+
+        // Validate each email before sending
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            if (mail($email, $subject, $text, $headers)) {
+                echo "<big><b>Email sent to: $email</b></big><br>";
+            } else {
+                echo "<big><b>Failed to send email to: $email</b></big><br>";
+            }
+        } else {
+            echo "<big><b>Invalid Email Address: $email</b></big><br>";
+        }
+    }
+}
+?>
+

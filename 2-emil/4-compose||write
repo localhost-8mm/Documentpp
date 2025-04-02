@@ -1,6 +1,6 @@
 Write a PHP script to design a form to compose/write an email with file attachment. 
 :-------------------------
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
  

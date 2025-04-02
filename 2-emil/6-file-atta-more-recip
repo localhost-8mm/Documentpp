@@ -2,13 +2,12 @@ Design interactive WebPages in PHP to login, validation, and email sending with 
 attachment to one or more recipient.
 :0------------------
 
+file1.php
 
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>SET C2</title>
+	 
 </head>
 <body>
 	<h2>Login User</h2>
@@ -20,17 +19,18 @@ attachment to one or more recipient.
 </body>
 </html>
 
-------------
 <?php
+
 if(isset($_POST['submit']))
  {
+
 	$name = $_POST['name'];
 	$pass = $_POST['pass'];
 
 	if($name == "abc" && $pass== "123")
 	 {
 
-		header("Location: SetC2b.php");
+		header("Location: file2.php");
 		exit();
 	}
 	else 
@@ -38,14 +38,15 @@ if(isset($_POST['submit']))
 		echo "<big><b>Login Failed !</b></big>";
 	}
 }
-?>
 
------------------------------------------------------------------
+?>
+============================================
+file2.php
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SET C2</title>
+  
 </head>
 <body>
     <h2>Email Details</h2>
@@ -121,4 +122,3 @@ if(isset($_POST['send']))
     }
 }
 ?>
-

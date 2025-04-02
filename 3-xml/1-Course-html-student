@@ -8,8 +8,10 @@ Science>
 </Course> 
 Store the details of 5 students who are in TYBSc. 
 :-------------------------- 
+file1.xml
+
 <?xml version='1.0' encoding="ISO-8859-1"?>
-<?xml-stylesheet type="text/css" href="course.css" ?>
+<?xml-stylesheet type="text/css" href="file2.css" ?>
 <course>
 	<computer_science>
 		<student_name>om</student_name>
@@ -30,10 +32,9 @@ Store the details of 5 students who are in TYBSc.
 	</computer_science>
  
 </course>
+=========================
+file2.css
 
--------
-course.css
-:-
 student_name{
   color:blue;
   font-family:"Bodoni MT";

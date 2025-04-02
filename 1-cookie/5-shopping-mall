@@ -4,7 +4,8 @@ page should display a bill, which consists of a page total of what ever the
 purchase has been done and print the total. (Use http session tracking). 
  :-----------------------------
 
- <?php
+file1.php
+<?php
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -20,16 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['page1_total'] = $page1_total;
 
     // Redirect to Page 2
-    header("Location: SetC1b.php");
+    header("Location: file2.php");
     exit();
 }
 ?>
----------
+
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Shopping Mall - Page 1</title>
-</head>
+ 
 <body>
     <h1>Shopping Mall - Page 1</h1>
     <form method="POST">
@@ -40,36 +39,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
 </body>
 </html>
+==========================================
 
--------------------------------------------------------
+file2.php
 
 <?php
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') 
+{
     $page2_total = 0;
 
-    // Calculate page total
-    if (isset($_POST['items'])) {
-        foreach ($_POST['items'] as $price) {
+    
+    if (isset($_POST['items'])) 
+    {
+        foreach ($_POST['items'] as $price)
+         {
             $page2_total += (int)$price;
         }
     }
 
-    // Store page 2 total in the session
+ 
     $_SESSION['page2_total'] = $page2_total;
-
-    // Redirect to the Bill Page
-    header("Location: SetC1c.php");
+ 
+    header("Location: file3.php");
     exit();
 }
 ?>
 
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Shopping Mall - Page 2</title>
-</head>
+ 
 <body>
     <h1>Shopping Mall - Page 2</h1>
     <form method="POST">
@@ -80,25 +80,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
 </body>
 </html>
-Footer
-
---------------------------------------------------
-
+ 
+=============================================
+file3.php
 <?php
 session_start();
-// Retrieve page totals from the session
+ 
 $page1_total = isset($_SESSION['page1_total']) ? $_SESSION['page1_total'] : 0;
 $page2_total = isset($_SESSION['page2_total']) ? $_SESSION['page2_total'] : 0;
 
-// Calculate the grand total
+ 
 $grand_total = $page1_total + $page2_total;
-
-// Clear session data (optional)
-
+ 
 session_unset();
 session_destroy();
 ?>
---------
+
 <!DOCTYPE html>
 <html>
 <head>

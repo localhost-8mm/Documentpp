@@ -1,0 +1,121 @@
+SSIGNMENT NO. 1 : COOKIES & SESSIONS 
+:--
+Set A   
+Q:1) Create a login form with a username and password. Once the user logs in, the second form should be displayed to accept user details (name, city, phoneno). If the user doesn’t enter information within a specified time limit, expire his session and give a warning.   
+Q:2) Write a script to keep track of number of times the web page has been accessed.   
+
+Set B   
+Q:1) Change the preferences of your web page like font style, font size, font color, background color using cookie. Display selected settings on next web page and actual implementation (with new settings) on third web page.   
+
+Q:2) Create a form to accept student information (name, class, address). Once the student information is accepted, accept marks in next form (Phy, Bio, Chem, Maths, Marathi, English) .Display the mark sheet for the student in the next form containing name, class, marks of the subject, total and percentage. 
+  
+Set C   
+Q:1) Write a program to create a shopping mall. User must be allowed to do purchase from two pages. Each page should have a page total. The third page should display a bill, which consists of a page total of what ever the purchase has been done and print the total. (Use http session tracking).   
+
+Q:2) Create a form to accept customer information(name, address, ph-no).Once the customer information is accepted, accept product information in the next form(Product name, qty, rate). Display the bill for the customer in the next form. Bill should contain the customer information and the information of the products entered.   
+
+Q:3) Write a PHP script to accept username and password . If in the first three chances, username and password entered is correct, then display second form, otherwise display error message.   
+
+-=============================================================================
+ASSIGNMENT NO. 2 : EMAIL HANDLING WITH PHP
+
+SET A :     
+-- Write a PHP script to accept following details form a user (To,  From, Subject, Text) and send email to particular user.     
+     
+ --Write a PHP script to design a form to sending an email to more than one recipient.     
+  
+SET B :     
+-- Write a PHP script to Validate given email ID. Design necessary screen layouts.     
+     --- Write a PHP script to design a form to compose/write an email with file attachment.     
+SET C :    
+- Write a PHP project script to design HTML Login form, validate it and compose/write an email with the following details:     
+         To:     
+         From:      
+         Subject:     
+         Message:     
+     
+--- Design interactive WebPages in PHP to login, validation, and email sending with file  attachment to one or more recipient.     
+
+
+-======================================
+SSIGNMENT NO. 3 : XML  
+
+Set A:     
+1) Write a script to create XML file named “Course.xml”  <Course>     
+         <Computer Science>     
+              <Student  name>.......</Student name>     
+              <Class name>......</Class name>     
+              <percentage>.....</percentage>          </Computer 
+Science>     
+</Course>             Store the details of 5 students who are in TYBSc.     
+Set B:    
+1) Write PHP script to generate an XML code in the following format     
+<?xml version="1.0" encoding="ISO-8859-1" ?>     
+<CD Store>     
+          <Movie>     
+               <Title>Mr. India</Title>     
+               <Release Year>1987</ Release Year >     
+          </Movie>     
+          <Movie>     
+               <Title>Holiday</Title>     
+               <Release Year>2014</ Release Year >     
+          </Movie>     
+          <Movie>     
+               <Title>LOC</Title>     
+               <Release Year>2003</ Release Year >     
+          </Movie>     
+     </CD Store>     
+     
+2) Create a XML file which gives details of movies  available in    “Mayanagari CD Store” from following categories  a)    Classical   b)   Action     c) Horror     Elements in each category are in the following format  <Category>     
+      <Movie Name>----</Movie Name>     
+      <Release Year>----</Release Year>   </Category>    Save the file with name “movies.xml”.    
+   
+Set C :    
+1) Create an application that reads “book.xml” file into simple XML object. Display attributes and elements (Hint:simple_xml_load_file() function)     
+2) Write a script to create “cricket.xml” file with multiple elements as given  below 
+<Cricket  team>  <Country = India>     
+<Player Name >-------- <Player Name >     
+       <Wickets>--------- </Wickets>         <Runs>------ --</Runs>     
+</Country>     </Cricket  team>          Also add country = “England” and its elements    
+-============================================================================
+ASSIGNMENT NO. 4 : JAVASCRIPT  
+
+SET A:     
+1) Write a javascript to display message ‘Good Morning’ using alert box.      
+
+2) Write a javascript to display message ‘Good Afternoon’ using function.(Hint:     use Event ‘Onload’).     
+
+SET B:     
+1) Write a javascript function to validate username and password for a membership form.     
+
+2) Using Javascript function, display the string in different formatting styles(Bold, italic, underline, strikethrough, hypertext etc)    
+
+SET C:     
+1) Write a Javascript to create a FIFO queue . Insert new element in it (Hint: Use concept of Array )     
+
+2) Write a Javascript program to accept name of student, Change font color to red, font size to 18 if student name is present otherwise on clicking on empty text box display image which change its size (Use onblur, onload, onmousehover,  onmouseclick, onmouseup)       
+
+-==============================================================================
+
+ASSIGNMENT NO. 5 : AJAX
+
+Set A :      
+1) Write Ajax program to read a textfile and print the contents of the file when the user clicks on the Print button.     
+      
+2) Write Ajax program to carry out validation for a username entered in textbox. If the textbox is blank, print ‘Enter username’. If the number  of characters is less than three,print’ Username is too short’. If value entered is appropriate the print ‘Valid username’.     
+     
+   
+   
+Set B :     
+     
+1) Create employee table as follows      EMP(eno, ename, designation, salary). Write Ajax program to select the  employees name and print the selected employee’s details.       
+     
+2) Write Ajax program to print Movie details by selecting an Actor’s name.    Create table MOVIE and ACTOR as follows with 1 : M cardinality    MOVIE  (mno, mname, release_yr) and ACTOR(ano, aname)     
+     
+Set C :     
+1) Write Ajax program to fetch suggestions when is user is typing in a textbox. (eg like google suggestions. Hint create array of  suggestions and matching string will be displayed )     
+     
+2) Write Ajax program to get book details from XML file when user select a book name. Create XML file for storing details of  book(title, author, year, price).     
+
+-=====================================================================
+ 

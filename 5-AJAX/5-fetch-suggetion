@@ -4,6 +4,8 @@ suggestions and matching string will be displayed )
   :-------------------------- 
 suggesion.html
 --
+file1.php
+
 <!DOCTYPE html>
 <html >
 <head> 
@@ -17,7 +19,7 @@ suggesion.html
             }
 
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "getsuggestion.php?q=" + str, true);
+            xhr.open("GET", "file2.php?q=" + str, true);
             xhr.onreadystatechange = function () 
             {
                 if (xhr.readyState == 4 && xhr.status == 200)
@@ -35,10 +37,8 @@ suggesion.html
     <div id="suggestions"></div>
 </body>
 </html>
-
-------------
-getsuggesion.php
---
+=========================================
+file2.php
 
 <?php
 $suggestions = ["Alice", "Bob", "Charlie", "David", "Daniel", "Eve", "Edward", "Emily", "Frank", "George"];
@@ -54,4 +54,3 @@ if (isset($_GET['q']))
     echo $matches ? implode("<br>", $matches) : "No suggestions found";
 }
 ?>
---

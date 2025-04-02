@@ -4,6 +4,8 @@ Create table MOVIE and ACTOR as follows with 1 : M cardinality MOVIE
   :--------------------------
 
 
+file1.php
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +17,7 @@ Create table MOVIE and ACTOR as follows with 1 : M cardinality MOVIE
             if (actor === "") return;
             
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "getmovie.php?actor=" + encodeURIComponent(actor), true);
+            xhr.open("GET", "file2.php?actor=" + encodeURIComponent(actor), true);
             xhr.onreadystatechange = function () 
             {
                 if (xhr.readyState == 4 && xhr.status == 200) 
@@ -44,7 +46,6 @@ Create table MOVIE and ACTOR as follows with 1 : M cardinality MOVIE
 </body>
 </html>
 
--------------------
 <!-- CREATE TABLE MOVIE (
     mno SERIAL PRIMARY KEY,
     mname VARCHAR(100),
@@ -61,7 +62,34 @@ CREATE TABLE MOVIE_ACTOR (
     ano INT REFERENCES ACTOR(ano),
     PRIMARY KEY (mno, ano)
 ); -->
------------------------------------------------
+========================================
+file2.php
+
+
+
+<?php
+$conn = pg_connect("host=localhost dbname=your_database user=your_user password=your_password") 
+   
+or die("Connection failed!");
+
+if (isset($_GET["actor"]))
+ {
+    $actor = pg_escape_string($conn, $_GET["actor"]);
+    $query = "SELECT m.mname, m.release_yr 
+              FROM MOVIE m 
+              JOIN MOVIE_ACTOR ma ON m.mno = ma.mno 
+              JOIN ACTOR a ON ma.ano = a.ano 
+              WHERE a.aname = '$actor'";
+
+    $result = pg_query($conn, $query);
+    echo pg_num_rows($result) ? implode("<br>", array_map(fn($row) => "{$row['mname']} ({$row['release_yr']})", pg_fetch_all($result))) : "No movies found!";
+}
+
+pg_close($conn);
+?>
+
+
+
 
 <?php
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -92,30 +120,4 @@ CREATE TABLE MOVIE_ACTOR (
         }
     }
     ?>
-
-    --------------------------
-
-<?php
-$conn = pg_connect("host=localhost dbname=your_database user=your_user password=your_password") 
-   
-or die("Connection failed!");
-
-if (isset($_GET["actor"]))
- {
-    $actor = pg_escape_string($conn, $_GET["actor"]);
-    $query = "SELECT m.mname, m.release_yr 
-              FROM MOVIE m 
-              JOIN MOVIE_ACTOR ma ON m.mno = ma.mno 
-              JOIN ACTOR a ON ma.ano = a.ano 
-              WHERE a.aname = '$actor'";
-
-    $result = pg_query($conn, $query);
-    echo pg_num_rows($result) ? implode("<br>", array_map(fn($row) => "{$row['mname']} ({$row['release_yr']})", pg_fetch_all($result))) : "No movies found!";
-}
-
-pg_close($conn);
-?>
-
-
-
 

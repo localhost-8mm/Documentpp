@@ -9,47 +9,63 @@ Font-style	   Italic	    Normal	          Oblique
 Fontzize	   16 pts	     12 pts	           14 pts	
 :--------------------------
 
-<?xml version='1.0' encoding="ISO-8859-1"?>
-<?xml-stylesheet type="text/css" href="course.css" ?>
-<course>
-	<computer_science>
-		<student_name>om</student_name>
-		<class_name>TYBSc</class_name>
-		<percentage>45</percentage>
-	</computer_science>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<Courses>
+    <table>
+        <tr>
+            <th>PropertyName</th>
+            <th>StudentName</th>
+            <th>ClassName</th>
+            <th>Percentage</th>
+        </tr>
+        <tr>
+            <td>Color</td>
+            <td>Blue</td>
+            <td>Green</td>
+            <td>Red</td>
+        </tr>
+        <tr>
+            <td>Font-family</td>
+            <td>Bodoni MT</td>
+            <td>Arial, Helvetica, sans-serif</td>
+            <td>Impact, Charcoal, sans-serif</td>
+        </tr>
+        <tr>
+            <td>Font-style</td>
+            <td>Italic</td>
+            <td>Normal</td>
+            <td>Oblique</td>
+        </tr>
+        <tr>
+            <td>Font-size</td>
+            <td>16 pts</td>
+            <td>12 pts</td>
+            <td>14 pts</td>
+        </tr>
+    </table>
+</Courses>
+------------------------
 
-	<computer_science>
-		<student_name>nilesh</student_name>
-		<class_name>TYBSc</class_name>
-		<percentage>55</percentage>
-	</computer_science>
-	<computer_science>
+style. CSS:--
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
 
-		<student_name>swaraj</student_name>
-		<class_name>TYBSc</class_name>
-		<percentage>65</percentage>
-	</computer_science>
- 
-</course>
---------------
-css----
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
 
-student_name{
-  color:blue;
-  font-family:"Bodoni MT";
-  font:italic;
-  font-size:"16";
-  }
-  class_name{
-  color:green;
-  font-family:"Arial,Helvetica,sans-serif";
-  font:normal;
-  font-size:"12";
-  }
-  percentage{
-  color:red;
-  font-family:"Impact,Charcol,sans-serif";
-  font:oblique;
-  font-size:"14";
-  }
-   
+th {
+    background-color: lightgray;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+

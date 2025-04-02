@@ -6,38 +6,38 @@ Elements in each category are in the following format <Category>
 the file with name “movies.xml”. 
 :-------------------------- 
 
-<?xml version="1.0" encoding="UTF-8"?>
-<Movies>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Mayanagari_CD_Store>
     <Classical>
         <Movie>
-            <Name>Mughal-e-Azam</Name>
-            <ReleaseYear>1960</ReleaseYear>
+            <Movie_Name>Mughal-e-Azam</Movie_Name>
+            <Release_Year>1960</Release_Year>
         </Movie>
         <Movie>
-            <Name>Pather Panchali</Name>
-            <ReleaseYear>1955</ReleaseYear>
+            <Movie_Name>Pakeezah</Movie_Name>
+            <Release_Year>1972</Release_Year>
         </Movie>
     </Classical>
     
     <Action>
         <Movie>
-            <Name>Mad Max: Fury Road</Name>
-            <ReleaseYear>2015</ReleaseYear>
+            <Movie_Name>Sholay</Movie_Name>
+            <Release_Year>1975</Release_Year>
         </Movie>
         <Movie>
-            <Name>Die Hard</Name>
-            <ReleaseYear>1988</ReleaseYear>
+            <Movie_Name>Dhoom</Movie_Name>
+            <Release_Year>2004</Release_Year>
         </Movie>
     </Action>
     
     <Horror>
         <Movie>
-            <Name>The Conjuring</Name>
-            <ReleaseYear>2013</ReleaseYear>
+            <Movie_Name>Raaz</Movie_Name>
+            <Release_Year>2002</Release_Year>
         </Movie>
         <Movie>
-            <Name>IT</Name>
-            <ReleaseYear>2017</ReleaseYear>
+            <Movie_Name>1920</Movie_Name>
+            <Release_Year>2008</Release_Year>
         </Movie>
     </Horror>
-</Movies>
+</Mayanagari_CD_Store>

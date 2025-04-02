@@ -2,6 +2,8 @@
 EMP(eno, ename, designation, salary). Write Ajax program to select the 
 employees name and print the selected employee’s details. 
   :--------------------------
+file1.php
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +20,7 @@ employees name and print the selected employee’s details.
             }
 
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "getemployee.php?ename=" + encodeURIComponent(ename), true);
+            xhr.open("GET", "file2.php?ename=" + encodeURIComponent(ename), true);
 
             xhr.onreadystatechange = function ()
              {
@@ -47,7 +49,57 @@ employees name and print the selected employee’s details.
     <h3>Employee Details:</h3>
     <div id="details"></div>
 
-<!-- PHP Script -->
+</body>
+</html>
+
+<!-- CREATE TABLE EMP
+  (
+    eno INT PRIMARY KEY,
+    ename VARCHAR(50),
+    designation VARCHAR(50),
+    salary DECIMAL(10,2)
+);
+
+INSERT INTO EMP VALUES 
+(101, 'Alice', 'Manager', 75000),
+(102, 'Bob', 'Developer', 60000),
+(103, 'Charlie', 'Analyst', 50000); -->
+
+
+========================================
+file2.php
+
+<!-- <?php
+$conn = pg_connect("host=localhost dbname=your_database user=your_user password=your_password");
+
+if (!$conn) 
+{
+   die("Connection failed!"); 
+  }
+
+if (isset($_GET["ename"]))
+ {
+    $ename = pg_escape_string($conn, $_GET["ename"]);
+    $query = "SELECT * FROM employee WHERE ename='$ename'";
+    $result = pg_query($conn, $query);
+
+    if ($row = pg_fetch_assoc($result)) 
+    {
+        echo "Employee No: {$row['eno']}<br>Name: {$row['ename']}<br>Designation: {$row['designation']}<br>Salary: \${$row['salary']}";
+    } 
+    else
+     {
+        echo "No employee found!";
+    }
+}
+
+pg_close($conn);
+?> 
+
+
+
+
+
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $ename = $_GET['ename'];
@@ -69,20 +121,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     }
 }
 ?>
-
-
-</body>
-</html>
-
-<!-- CREATE TABLE EMP
-  (
-    eno INT PRIMARY KEY,
-    ename VARCHAR(50),
-    designation VARCHAR(50),
-    salary DECIMAL(10,2)
-);
-
-INSERT INTO EMP VALUES 
-(101, 'Alice', 'Manager', 75000),
-(102, 'Bob', 'Developer', 60000),
-(103, 'Charlie', 'Analyst', 50000); -->

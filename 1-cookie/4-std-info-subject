@@ -4,14 +4,15 @@ Chem, Maths, Marathi, English) .Display the mark sheet for the student in the
 next form containing name, class, marks of the subject, total and percentage. 
  :-----------------------------
 
- <!Doctype html>
+ file1.php
+<!Doctype html>
 <html>
 <head>
     <title>Student Information</title>
 </head>
 <body>
     <h2>Enter Student's Information</h2>
-    <form method="post" action="SetB2b.php">
+    <form method="post" action="file2.php">
         Name : <input type="text" name="name" required> <br><br>
         Class : <input type="text" name="class" required> <br><br>
         Address : <input type="text" name="address" required> <br><br>
@@ -19,7 +20,8 @@ next form containing name, class, marks of the subject, total and percentage.
     </form>
 </body>
 </html>
----------
+===========================
+file2.php
 
 <?php
 session_start();
@@ -30,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['address'] = $_POST['address'];
 }
 ?>
--------------
+
 <!Doctype html>
 <html>
 <head>
@@ -38,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <h2>Enter Student Marks</h2>
-    <form method="post" action="SetB2c.php">
+    <form method="post" action="file3.php">
         Physics   : <input type="number" name="physics" required> <br><br>
         Biology   : <input type="number" name="biology" required> <br><br>
         Chemistry : <input type="number" name="chemistry" required> <br><br>
@@ -49,8 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 </body>
 </html>
-
--------------
+==============================================
+file 3.php
 
 <?php
 session_start();
@@ -71,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 }
 ?>
 
-<!Doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Mark Sheet</title>

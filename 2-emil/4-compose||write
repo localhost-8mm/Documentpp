@@ -3,7 +3,7 @@ Write a PHP script to design a form to compose/write an email with file attachme
  <!DOCTYPE html>
 <html>
 <head>
-    <title>SET B2</title>
+ 
 </head>
 <body>
     <h2>Email Details</h2>
